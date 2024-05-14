@@ -46,17 +46,20 @@ void createNode(ListNode* node, int i){
         string str = to_string(output);
 
         ListNode* l = (ListNode*) malloc(sizeof(ListNode));
-        l->next = NULL;
+        ListNode* aux;
 
         for(int i = 0; i < str.size(); i++){
             int val = str[i] - '0';
+            cout << val << endl;
             if(l){
               l->val = val;
             } else {
               createNode(l, val);
+              cout << "criei" << endl;
+              cout << l->val << endl;
             }
-            cout << l->val << endl;
-            l = l->next;
+            aux = l;
+
         }
         return l;
     }
